@@ -244,7 +244,6 @@ class Trainer(object):
             targets = targets.long().to(self.device)
             print(images.shape)
             print(targets.shape)
-            prnt()
 
             outputs = self.model(images)
             print(outputs[0].shape)
