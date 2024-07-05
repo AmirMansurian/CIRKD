@@ -247,7 +247,7 @@ class Trainer(object):
 
             outputs = self.model(images)
             print(outputs[0].shape)
-            prnt()
+            print('##############################################################')
             
             if self.args.aux:
                 task_loss = self.criterion(outputs[0], targets) + 0.4 * self.criterion(outputs[1], targets)
