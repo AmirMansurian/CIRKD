@@ -242,6 +242,9 @@ class Trainer(object):
             iteration = iteration + 1
             images = images.to(self.device)
             targets = targets.long().to(self.device)
+            print(images.shape)
+            print(targets.shape)
+            prnt()
 
             outputs = self.model(images)
             
