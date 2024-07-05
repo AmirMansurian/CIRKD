@@ -38,6 +38,10 @@ class VOCDataTrainSet(data.Dataset):
             })
         self.num_class = 21
 
+        print('##################################')
+        print(len(self.files))
+        prnt()
+
     def __len__(self):
         return len(self.files)
 
