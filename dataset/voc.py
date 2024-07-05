@@ -28,9 +28,10 @@ class VOCDataTrainSet(data.Dataset):
             self.img_ids = self.img_ids * int(np.ceil(float(max_iters) / len(self.img_ids)))
         self.files = []
         # for split in ["train", "trainval", "val"]:
-        for name in self.img_ids:
+        for i, name in enumurate(self.img_ids):
             img_file = osp.join(self.root, "JPEGImages/%s.jpg" % name)
             label_file = osp.join(self.root, "SegmentationClass/%s.png" % name)
+            if i > 10: break
             self.files.append({
                 "img": img_file,
                 "label": label_file,
@@ -57,11 +58,6 @@ class VOCDataTrainSet(data.Dataset):
         datafiles = self.files[index]
         image = cv2.imread(datafiles["img"], cv2.IMREAD_COLOR)
         label = cv2.imread(datafiles["label"], cv2.IMREAD_GRAYSCALE)
-        print(datafiles["img"])
-        print(datafiles["label"])
-        print(image.shape)
-        print(label.shape)
-        
         
         label = self.id2trainId(label)
 
