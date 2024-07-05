@@ -57,7 +57,11 @@ class VOCDataTrainSet(data.Dataset):
         datafiles = self.files[index]
         image = cv2.imread(datafiles["img"], cv2.IMREAD_COLOR)
         label = cv2.imread(datafiles["label"], cv2.IMREAD_GRAYSCALE)
-
+        print(datafiles["img"])
+        print(datafiles["label"])
+        print(label)
+        print(image)
+        
         label = self.id2trainId(label)
 
         size = image.shape
