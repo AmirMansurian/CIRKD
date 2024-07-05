@@ -123,8 +123,6 @@ class Trainer(object):
     def __init__(self, args):
         self.args = args
         self.device = torch.device(args.device)
-        print(self.device)
-        prnt()
         self.num_gpus = int(os.environ["WORLD_SIZE"]) if "WORLD_SIZE" in os.environ else 1
 
         if args.dataset == 'citys':
