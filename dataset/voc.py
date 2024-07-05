@@ -37,7 +37,6 @@ class VOCDataTrainSet(data.Dataset):
                 "name": name
             })
         self.num_class = 21
-        self.__getitem__(1)
 
     def __len__(self):
         return len(self.files)
@@ -58,10 +57,6 @@ class VOCDataTrainSet(data.Dataset):
         datafiles = self.files[index]
         image = cv2.imread(datafiles["img"], cv2.IMREAD_COLOR)
         label = cv2.imread(datafiles["label"], cv2.IMREAD_GRAYSCALE)
-        print('##################################')
-        print(datafiles["img"])
-        print(image.shape)
-        prnt()
 
         label = self.id2trainId(label)
 
