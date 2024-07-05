@@ -38,9 +38,9 @@ def parse_args():
                         help='model name')  
     parser.add_argument('--backbone', type=str, default='resnet18',
                         help='backbone name')
-    parser.add_argument('--dataset', type=str, default='citys',
+    parser.add_argument('--dataset', type=str, default='voc',
                         help='dataset name')
-    parser.add_argument('--data', type=str, default='./dataset/cityscapes/',  
+    parser.add_argument('--data', type=str, default='/kaggle/input/pascal-voc-2012/VOC2012',  
                         help='dataset directory')
     parser.add_argument('--crop-size', type=int, default=[512, 1024], nargs='+',
                         help='crop image size: [height, width]')
