@@ -37,6 +37,7 @@ class VOCDataTrainSet(data.Dataset):
                 "name": name
             })
         self.num_class = 21
+        self.__getitem__(1)
 
     def __len__(self):
         return len(self.files)
