@@ -86,7 +86,7 @@ def parse_args():
                         help='per iters to save')
     parser.add_argument('--val-per-iters', type=int, default=800,
                         help='per iters to val')
-    parser.add_argument('--pretrained-base', type=str, default='resnet18-5c106cde.pth',
+    parser.add_argument('--pretrained-base', type=str, default='None',
                         help='pretrained backbone')
     parser.add_argument('--pretrained', type=str, default='None',
                         help='pretrained seg model')
